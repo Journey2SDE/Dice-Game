@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+      .diceArea {
+        height: 500px;
+        width: 500px;
+        border: 13px solid;
+        place-items: center;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- here i'm taking a div its a border in which dice images should display -->
+
+    <div class="diceArea" id="sample" style="display: none;">
+      <img src="" id="diceImg" />
+    </div>
+
+    <div class="buttons">
+      <button id="one">one</button>
+      <button id="two">two</button>
+      <button id="three">three</button>
+      <button id="four">four</button>
+      <button id="five">five</button>
+      <button id="six">six</button>
+    </div>
+
+    <!-- one method : -->
+
+    <!-- <script>
+    let image = document.getElementById("diceImg");
+    let first = document.getElementById("one")
+    let second = document.getElementById("two")
+    let third = document.getElementById("three")
+    let fourth = document.getElementById("four")
+    let fifth = document.getElementById("five")
+    let sixth = document.getElementById("six")
+    
+
+    first.addEventListener('click', ()=>{
+        image.src = "one.png";
+    })
+    second.addEventListener('click', ()=>{
+        image.src = "two.png";
+    })
+    three.addEventListener('click', ()=>{
+        image.src = "three.png";
+    })
+    fourth.addEventListener('click', ()=>{
+        image.src = "four.png";
+    })
+    fifth.addEventListener('click', ()=>{
+        image.src = "five.png";
+    })
+    sixth.addEventListener('click', ()=>{
+        image.src = "six.png";
+    })
+</script> -->
+  </body>
+
+  <script>
+    var takeDiv = document.getElementById("sample");
+    let image = document.getElementById("diceImg");
+    let buttons = document.getElementsByTagName("button");
+
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].addEventListener("click", function () {
+        var kiran = this.textContent;
+        console.log(kiran);
+        if (takeDiv.style.display === "none") {
+          takeDiv.style.display = "grid";
+        }
+
+        switch (true) {
+          case kiran === "one":
+            image.src = "./images/one.png";
+            break;
+
+          case kiran === "two":
+            image.src = "./images/two.png";
+            break;
+
+          case kiran === "three":
+            image.src = "./images/three.png";
+            break;
+
+          case kiran === "four":
+            image.src = "./images/four.png";
+            break;
+
+          case kiran === "five":
+            image.src = "./images/five.png";
+            break;
+
+          case kiran === "six":
+            image.src = "./images/six.png";
+            break;
+        }
+      });
+    }
+  </script>
+</html>
